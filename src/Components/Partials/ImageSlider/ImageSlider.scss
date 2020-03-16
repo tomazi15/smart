@@ -1,0 +1,25 @@
+.ImageSlider {
+    &__side img{
+        position: relative;
+        width: 100px;
+        height: 201.3px;
+        cursor: pointer;
+        padding-bottom: 5px;
+
+        @media screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+    &__active img{
+        height: 600px;
+        width: 493px;
+        padding-right: 120px;
+
+        @media screen and (max-width: 1200px) {
+            width: 380px;
+        }
+        @media screen and (max-width: 991px) {
+            width: 585px;
+        }  
+    }
+}

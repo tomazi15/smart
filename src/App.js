@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
-function App() {
+import { connect } from 'react-redux';
+import { setLikedProducts } from './actions';
+
+import ProductCardContainer from './Components/ProductCardContainer/ProductCardContainer';
+
+function App({ setLikedProducts }) {
+
+  setLikedProducts();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProductCardContainer />
     </div>
   );
 }
 
-export default App;
+const mapDispatchToProps = () => {
+  return {
+    setLikedProducts
+  }
+}
+
+export default connect(null , mapDispatchToProps())(App);
+
